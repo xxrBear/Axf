@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-        我的
+    我的
 {% endblock %}
 
 {% block ext_css %}
@@ -18,9 +18,9 @@
 
             {% if user_id %}
                 <span>
-                    <img src="/static/upload/{{ userx.u_icon }}" alt="" >
+                    <img src="/static/upload/{{ userx.u_icon }}" alt="">
                 </span>
-                {%  else  %}
+            {% else %}
                 <span class="glyphicon glyphicon-user"></span>
             {% endif %}
 
@@ -136,11 +136,11 @@
                 </ul>
             </menu>
 
-                    {% if user_id %}
-                    <p>
-                        <a href="{% url 'axfuser:loginout' %}">退出</a>
-                    </p>
-                    {% endif %}
+            {% if user_id %}
+                <p>
+                    <a href="{% url 'user:loginout' %}">退出</a>
+                </p>
+            {% endif %}
 
         </div>
 

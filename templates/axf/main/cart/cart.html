@@ -20,7 +20,7 @@
 {% block header %}
     {{ block.super }}
 
-        <div id="cart">
+    <div id="cart">
         <h3>购物车</h3>
         <div class="full">
             <section>
@@ -49,7 +49,7 @@
                 </div>
 
                 {% for cart in carts %}
-                    <div class="menuList" cartid = {{ cart.id }}>
+                    <div class="menuList" cartid= {{ cart.id }}>
                         <div class="confirm">
                             <span>
                             {% if cart.c_is_select %}
@@ -61,41 +61,41 @@
 
                         </div>
 
-                    <a href="">
-                        <img src="/static{{ cart.c_goods.productimg }}" alt="">
-                        <p>{{ cart.c_goods.productname }}</p>
-                        <p class="presentPrice">{{ cart.c_goods.price }}</p>
-                    </a>
+                        <a href="">
+                            <img src="/static{{ cart.c_goods.productimg }}" alt="">
+                            <p>{{ cart.c_goods.productname }}</p>
+                            <p class="presentPrice">{{ cart.c_goods.price }}</p>
+                        </a>
 
-                    <section>
-                        <button class="subcart" >-</button>
-                        <span>{{ cart.c_goods_num }}</span>
-                        <button class="addcart">+</button>
-                    </section>
+                        <section>
+                            <button class="subcart">-</button>
+                            <span>{{ cart.c_goods_num }}</span>
+                            <button class="addcart">+</button>
+                        </section>
 
                     </div>
                 {% endfor %}
 
-                    <div class="payTheBill">
-                        <div class="all_select" id="all_select">
+                <div class="payTheBill">
+                    <div class="all_select" id="all_select">
                             <span>
                             {% if is_all_select %}
-                                    <span>✔</span>
-                                {% else %}
-                                    <span></span>
+                                <span>✔</span>
+                            {% else %}
+                                <span></span>
                             {% endif %}
                             </span>
-                        </div>
-
-                        <p>
-                            <span>全选</span>
-                            <span>共计：</span>
-                            <span id="total_price">{{ price }}</span>
-                        </p>
-                        <button class="btn" id="make_order">下单</button>
                     </div>
+
+                    <p>
+                        <span>全选</span>
+                        <span>共计：</span>
+                        <span id="total_price">{{ price }}</span>
+                    </p>
+                    <button class="btn" id="make_order">下单</button>
+                </div>
             </section>
 
-    </div>
+        </div>
     </div>
 {% endblock %}

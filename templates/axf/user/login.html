@@ -14,7 +14,7 @@
 {% block footer %}
     {{ block.super }}
     <div class="container">
-          <form action="{% url 'axfuser:login' %}" method="post" onsubmit="return parse();">
+          <form action="{% url 'user:login' %}" method="post" onsubmit="return parse();">
           <span style="color: red">{{ msg }}</span>
           {% csrf_token %}
 
@@ -29,7 +29,7 @@
             <input name="password" type="password" class="form-control" id="password" placeholder="输入你的密码">
           </div>
 
-          <img src="/axfuser/get_code/" alt="" id="changeimg" onclick="a();">
+          <img src="/user/get_code/" alt="" id="changeimg" onclick="a();">
           <input type="text" name="imgcode">
 
           <button type="submit" class="btn btn-success btn-block">登陆</button>
